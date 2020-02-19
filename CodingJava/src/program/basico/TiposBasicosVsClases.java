@@ -37,7 +37,6 @@ public class TiposBasicosVsClases {
 	private static void difPrimitivosYObjetos() {
 		int i = 5; // Primitiva: Se DECLARA
 		int j;
-		int x = 6;
 		j = 7 - 2;
 	
 		
