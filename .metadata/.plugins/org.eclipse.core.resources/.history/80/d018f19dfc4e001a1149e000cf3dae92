@@ -1,0 +1,20 @@
+package program.basico;
+import java.util.Date;
+
+// Esta clase realmente se llama
+// program.basico.TiposBasicosVsClases
+public class TiposBasicosVsClases {
+	public static void main(java.lang.String[] args) {
+		
+		difPrimitivosYObjetos();
+		
+	}
+	
+	public static void difPrimitivosYObjetos() {
+		String s = ""; // String esta en java-lang
+		
+//		java.util.Date fecha = new Date();
+		Date fecha = new Date();
+	}
+
+}

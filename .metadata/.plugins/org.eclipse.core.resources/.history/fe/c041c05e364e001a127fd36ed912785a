@@ -1,0 +1,21 @@
+
+public class SaludosMundo {
+	public static void main(String[] args) {
+		tipos();
+	}
+	static void tipos() {
+		byte a = 10; // -128 a 127
+		short b = 10; // (2 bytes de memoria) -32768 a 32277
+		int i = 5; // (32 bits)
+		long l = 10; // (64 bits)
+		System.out.println( Integer.MAX_VALUE );
+		System.out.println(Long.MAX_VALUE);
+		System.out.println(System.currentTimeMillis());
+		System.out.println(a);
+		float f = 14.14f;
+		System.out.println(Float.MAX_VALUE);
+		double d = 9217.21376;
+		System.out.println(Double.MAX_VALUE);
+		
+	}
+}

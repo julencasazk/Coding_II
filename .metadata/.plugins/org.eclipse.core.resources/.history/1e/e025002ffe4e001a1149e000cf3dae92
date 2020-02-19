@@ -1,0 +1,31 @@
+package program.basico;
+import java.util.Date;
+
+// Esta clase realmente se llama
+// program.basico.TiposBasicosVsClases
+public class TiposBasicosVsClases {
+	public static void main(java.lang.String[] args) {
+		
+		difPrimitivosYObjetos();
+		
+	}
+	
+	public static void difPrimitivosYObjetos() {
+		int i = 5; // Primitiva: Se DECLARA
+		int j;
+		j = 7 - 2;
+		
+		String s = "hola"; // String esta en java-lang
+		// Lo que en verdad esta pasando es esto:
+		String s2 = new String( "hola" ); // Objeto: new lo declara y lo crea
+		String s3 =  new String( "ho" );
+		s3 = s3 + "la";
+		System.out.println( j == i);
+		System.out.println( s3 == s2);
+		
+		
+//		java.util.Date fecha = new Date(); //  Si no haces import // Vease la similitud con package
+		Date fecha = new Date();
+	}
+
+}
