@@ -1,62 +1,81 @@
 package program;
-/**
- * Clase para implementar el manejo de libros y su informacion
+
+/** Clase para implementar el manejo de libros y su informacion
+ * @author julen.casal at julen.casal@opendeusto.es
  */
 public class Libro {
-    
+
+    // Parte STATIC - de clase
+
+    public static void main(String[] args) {
+        Libro l = null;
+        // System.out.println( l.numPaginas ); // Daría error NULLPOINTER!!
+        l = new Libro();
+        System.out.println( l.numPaginas ); // Si fuese fuera de la Clase habria que usar getNumPaginas()
+        l.setTitulo("Sapiens");
+        l.setTexto("Bruh");
+        l.setNumPaginas(359);
+        l.setISBN("XXSAD321321");
+        l.vender(null);
+    }
+
+    // Parte NO STATIC - de objeto
     private String texto;
     private String titulo;
     private String isbn;
     private int numPaginas;
 
+
+    public String toString() {
+        return titulo + "( " + numPaginas + " paginas )";
+    }
+
     public void sacarAConsola() {
-        // TODO
+        System.out.println(this.titulo);
 
     }
-
+    
     public String getTexto() {
-        // TODO
-
-        return null;
+        return texto;
     }
 
-    public void setTexto( String texto ) { 
-        // TODO
-
+    public void setTexto( String texto ) {
+        this.texto = texto;
     }
 
     public String getISBN() {
-        // TODO
-
-        return null;
+        return this.isbn;
     }
-    
+
     public void setISBN( String isbn) {
-        // TODO
-        
+        this.isbn = isbn;
     }
 
     public String getTitulo() {
-        // TODO
-        return null;
+
+        return this.titulo;
         
     }
 
-    public void setTitulo( String titulo) {
-        // TODO
+    public void setTitulo( String titulo ) {
 
-        
+        this.titulo = titulo;
+
     }
 
     public int getNumPaginas() {
-        // TODO
-        return 0;
+ 
+        return this.numPaginas;
 
-        
+    }
+
+    public void setNumPaginas( int numPaginas) {
+        this.numPaginas = numPaginas;
     }
     
     public void vender( Cliente cliente ) {
         // TODO
+        System.out.println("Venta realizada del libro " + this + " a el cliente " + cliente );
         
     }
 }
