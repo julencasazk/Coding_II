@@ -16,7 +16,11 @@ public class Libro {
         l.setTexto("Bruh");
         l.setNumPaginas(359);
         l.setISBN("XXSAD321321");
-        l.vender(null);
+        Cliente c = new Cliente();
+        c.setName("Maña Nano");
+        c.setID(762155632);
+        c.setUsername("manananohayclase");
+        l.vender(c);
     }
 
     // Parte NO STATIC - de objeto
