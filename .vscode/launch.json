@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HolaMundo<CodingJava>",
+            "request": "launch",
+            "mainClass": "program.Tema1.HolaMundo",
+            "projectName": "CodingJava"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Libro<CodingJava>",
+            "request": "launch",
+            "mainClass": "program.Tema1.Libro",
+            "projectName": "CodingJava"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PruebaVentana<CodingJava>",
+            "request": "launch",
+            "mainClass": "program.Tema1.PruebaVentana",
+            "projectName": "CodingJava"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Tipos<CodingJava>",
+            "request": "launch",
+            "mainClass": "program.Tema1.Tipos",
+            "projectName": "CodingJava"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-VentanaGrafica<CodingJava>",
+            "request": "launch",
+            "mainClass": "program.Tema1.VentanaGrafica",
+            "projectName": "CodingJava"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TiposBasicosVsClases<CodingJava>",
+            "request": "launch",
+            "mainClass": "program.basico.TiposBasicosVsClases",
+            "projectName": "CodingJava"
+        }
+    ]
+}
