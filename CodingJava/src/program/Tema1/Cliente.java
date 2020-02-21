@@ -1,4 +1,4 @@
-package program;
+package program.Tema1;
 
 /**@author julen.casal at julen.casal@opendeusto.es
  * Cliente

@@ -1,4 +1,4 @@
-package program;
+package program.Tema1;
 
 public class HolaMundo {
 	public static void main(String[] args) {
