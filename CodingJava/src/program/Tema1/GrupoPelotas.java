@@ -6,15 +6,14 @@ package program.Tema1;
  */
 public class GrupoPelotas {
 
-    int grupoTamanyo;
-    Pelota pelotaArray[] = new Pelota [grupoTamanyo];
+    private int grupoTamanyo;
+    private Pelota pelotaArray[] = new Pelota [grupoTamanyo];
 
 
     public GrupoPelotas( int tamanyo ) {
         grupoTamanyo = tamanyo;
     }
 
-    
     /**
      * Meter nueva pelota al grupo
      * @param pelota Nueva pelota a meter en el grupo
@@ -35,8 +34,6 @@ public class GrupoPelotas {
         // ¿Como pongo límite a los items que puedo meter?
         // Ahora mismo creo un array con length + 1 para poder meter una Pelota nueva
         // Por lo que NUNCA va a devolver FALSE
-
-        
     }
 
     /**
@@ -52,9 +49,7 @@ public class GrupoPelotas {
         }
         pelotaArray = nuevoGrupo;
         --grupoTamanyo;
-        // TODO
-
-        
+        // TODO       
     }
 
     /**
@@ -79,10 +74,8 @@ public class GrupoPelotas {
             }
         }
         // TODO
-        // Aparece que no devuelve un int, pero la var "i" es un int
-        
+        // Aparece que no devuelve un int, pero la var "i" es un int  
     }
-
 
     /**
      * Dibuja el grupo de pelotas
@@ -93,11 +86,5 @@ public class GrupoPelotas {
             pelotaArray[i].dibujar(v);
         }
         // TODO
-
-    }
-
-
-
-    
-
+    }  
 }
