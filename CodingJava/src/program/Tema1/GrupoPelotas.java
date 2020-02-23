@@ -74,7 +74,7 @@ public class GrupoPelotas {
             }
         }
         // TODO
-        // Aparece que no devuelve un int, pero la var "i" es un int  
+        // ERROR Aparece que no devuelve un int, pero la var "i" es un int  
     }
 
     /**
