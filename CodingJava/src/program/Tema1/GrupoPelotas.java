@@ -11,7 +11,7 @@ public class GrupoPelotas {
 
 
     public GrupoPelotas( int tamanyo ) {
-        grupoTamanyo = tamanyo;
+        this.grupoTamanyo = tamanyo;
     }
 
     /**
@@ -73,8 +73,7 @@ public class GrupoPelotas {
                 return i;
             }
         }
-        // TODO
-        // ERROR Aparece que no devuelve un int, pero la var "i" es un int  
+        return 0;
     }
 
     /**
