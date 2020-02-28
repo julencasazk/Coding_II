@@ -5,8 +5,8 @@ import java.lang.Math;
  */
 public class TableroCaramelos {
 
-    private CarameloUD[][] grid;
-    private String[] colors = new String[] {"red","green","blue","purple"};
+    public CarameloUD[][] grid; // TODO // Cambiar a privado una vez terminado de testear
+    private String[] colors = new String[] {"r","g","b","p"}; // red, green, blue, purple
 
     /**
      * Contructor con parametros
@@ -28,6 +28,14 @@ public class TableroCaramelos {
             }
         }
     }
+
+    /**
+     * @return El tablero
+     */
+    public CarameloUD[][] getGrid() {
+        return grid;
+    }
+    
     /**
      * Establece un caramelo en la posicion del tablero deseada
      * @param c Caramelo a establecer
@@ -84,8 +92,29 @@ public class TableroCaramelos {
         this.grid[columnainic][filainic] = temp;
     }
 
+    /**
+     * @return La tabla en forma de String
+     */
     public String toString() {
-        //TODO
-        return "";
+        String tablero = new String();
+        int[] nums = {0,1,2,3,4,5};
+        tablero = "  0 1 2 3 4 5 \n";
+        for (int j = 0; j < grid[0].length; j++){
+
+            tablero = tablero + nums[j] + " ";
+
+            for (int i=0; i<grid.length; i++) {
+                if (this.grid[i][j] == null){
+                    tablero = tablero + "- ";
+                }
+                else {
+                    tablero = tablero + this.grid[i][j].getColor() + " ";
+                }
+
+            }
+            tablero = tablero + "\n";
+        
+        }
+        return tablero;
     }
 }

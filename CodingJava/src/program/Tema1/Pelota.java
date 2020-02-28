@@ -13,6 +13,28 @@ public class Pelota {
     // Private Point centro // Se podria hacer un punto en lugar de x,y
     private Color color;
 
+    /**
+     * Contructor con parámetros
+     * @param x
+     * @param y
+     * @param radio
+     * @param color
+     */
+    public Pelota(double x,double y,int radio,Color color){
+        this.x = x;
+        this.y = y;
+        this.radio = radio;
+        this.color = color;
+
+    }
+
+    /**
+     * Contructor por defecto (Sin parámetros)
+     */
+    public Pelota() {
+
+    }
+
     /** Devuelve el radio de la pelota
      * @return Radio en pixeles
      */
@@ -63,6 +85,32 @@ public class Pelota {
 
     public void dibujar( VentanaGrafica v ) { // No hace falta pasar los atributos de la clase
         v.dibujaCirculo( x, y, radio, 2.0f, color);
+    }
+
+    /**
+     * Mover la pelota 50px a la derecha y dibujarla
+     * EL MOVIMIENTO OCUPA 2 SEGUNDOS
+     */
+    public void move50Right(VentanaGrafica v) {
+        this.rmPelota(v);
+        for(int inc = 0; inc < 50; inc++ ){
+            x++;            
+            this.dibujar(v);
+            v.espera(40); // 2000 milisegundos / 50 movimientos            
+            this.rmPelota(v);
+        }
+        this.dibujar(v);
+
+    }
+    public void rmPelota(VentanaGrafica v) {
+        v.dibujaCirculo(x, y, radio, 2.0f, Color.WHITE);
+    }
+
+    public void moverYDibujar(VentanaGrafica v, double incX, double incY) {
+        this.rmPelota(v);
+        x += incX; // x =  x + incX
+        y += incY; // y = y + incY
+        this.dibujar(v);
     }
 
 }

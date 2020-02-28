@@ -6,34 +6,29 @@ package program.Tema1;
  */
 public class GrupoPelotas {
 
-    private int grupoTamanyo;
-    private Pelota pelotaArray[] = new Pelota [grupoTamanyo];
+    private Pelota pelotaArray[];
+    private int numPelotas = 0;
 
 
     public GrupoPelotas( int tamanyo ) {
-        this.grupoTamanyo = tamanyo;
+        this.pelotaArray = new Pelota[tamanyo];
     }
 
     /**
-     * Meter nueva pelota al grupo
-     * @param pelota Nueva pelota a meter en el grupo
-     * @return True si se ha metido en la pelota, False si no es posible (grupo lleno)
+     * Checkea si hay espacio y añade pelota
+     * @param pelota
+     * @return false si no hay espacio
+     * @return true si ha metido la pelota con éxito
      */
-    public boolean addPelota( Pelota pelota ) {
-
-        Pelota nuevoGrupo[] = new Pelota [grupoTamanyo + 1];
-        for (int i = 0; i < nuevoGrupo.length; i++) {
-            nuevoGrupo[i] = pelotaArray [i];
+    public boolean addPelota( Pelota pelota) {
+        if (numPelotas == pelotaArray.length) {
+            return false;
         }
-        nuevoGrupo[nuevoGrupo.length - 1] = pelota;
-        pelotaArray = nuevoGrupo;
-        ++grupoTamanyo;
-        return true;
-
-        // TODO
-        // ¿Como pongo límite a los items que puedo meter?
-        // Ahora mismo creo un array con length + 1 para poder meter una Pelota nueva
-        // Por lo que NUNCA va a devolver FALSE
+        else {
+            pelotaArray[numPelotas] = pelota;
+            ++numPelotas;
+            return true;
+        }
     }
 
     /**
@@ -41,17 +36,24 @@ public class GrupoPelotas {
      * @param numPelota Indice de la pelota a quitar
      */
     public void rmPelota( int numPelota ) {
-        Pelota nuevoGrupo[] = new Pelota [grupoTamanyo - 1];
-        for (int i = 0; i < pelotaArray.length; i++) {
-            if (i != numPelota) {
-                nuevoGrupo[i] = pelotaArray[i];
-            }
+        for (int i=numPelota+1; i<numPelotas; i++) {
+            pelotaArray[i-1] = pelotaArray[i];
+
         }
-        pelotaArray = nuevoGrupo;
-        --grupoTamanyo;
-        // TODO       
+        numPelotas--;
     }
 
+    /**
+     * @return the numPelotas
+     */
+    public int getNumPelotas() {
+        for (int i = 0; i < pelotaArray.length; i++) {
+            if (this.pelotaArray[i] != null) {
+                ++numPelotas;
+            }
+        }
+        return numPelotas;
+    }
     /**
      * Devuelve una pelota del grupo
      * @param numPelota Indice de la pelota deseada
@@ -73,7 +75,7 @@ public class GrupoPelotas {
                 return i;
             }
         }
-        return 0;
+        return -1;
     }
 
     /**
