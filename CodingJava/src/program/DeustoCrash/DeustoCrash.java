@@ -29,7 +29,6 @@ public class DeustoCrash {
      * @return
      */
     public static Boolean buscaYQuitaLineas(TableroCaramelos tablero) {
-        // TODO // Falta el sistema de mirar si hay rachas de 3 o más caramelos
         for (int i = 1; i < tablero.getGrid().length-1; i++) {
             for (int j = 1; j < tablero.getGrid()[0].length-1; j++) {
                 if (tablero.getGrid()[i][j] != null && tablero.getGrid()[i-1][j] != null && tablero.getGrid()[i+1][j] != null) {
