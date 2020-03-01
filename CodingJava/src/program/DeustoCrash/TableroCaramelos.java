@@ -85,7 +85,7 @@ public class TableroCaramelos {
      * @param columnadest
      */
     public void swapCaramelo(int filainic, int columnainic, int filadest, int columnadest) {
-        // TODO
+        // TODO / Limitar el swap a posiciones contiguas
         CarameloUD temp;
         temp = this.grid[columnadest][filadest];
         this.grid[columnadest][filadest] = this.grid[columnainic][filainic];
@@ -98,10 +98,10 @@ public class TableroCaramelos {
     public String toString() {
         String tablero = new String();
         int[] nums = {0,1,2,3,4,5};
-        tablero = "  0 1 2 3 4 5 \n";
+        tablero = "      0 1 2 3 4 5 \n";
         for (int j = 0; j < grid[0].length; j++){
 
-            tablero = tablero + nums[j] + " ";
+            tablero = tablero + nums[j] + " --> ";
 
             for (int i=0; i<grid.length; i++) {
                 if (this.grid[i][j] == null){

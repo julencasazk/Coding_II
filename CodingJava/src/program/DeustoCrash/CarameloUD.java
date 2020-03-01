@@ -8,6 +8,7 @@ public class CarameloUD {
     private int posFila;
     private int posColumna;
     private String color;
+    private boolean streakOn;
     //Test
 
 
@@ -22,7 +23,24 @@ public class CarameloUD {
         this.color = color;
         this.posColumna = columna;
         this.posFila = fila;
+        this.streakOn = false;
 
+    }
+
+    /**
+     * Establece el nuevo estado de racha del caramelo
+     * @param rachaOn True si el caramelo esta contiguo a otro de su color
+     */
+    public void setStreakOn(Boolean rachaOn) {
+        this.streakOn = rachaOn;
+
+    }
+
+    /**
+     * @return Si está en racha con algún otro caramelo
+     */
+    public boolean getStreakOn(){
+        return streakOn;
     }
     
     /**
@@ -44,6 +62,10 @@ public class CarameloUD {
      */
     public String getColor() {
         return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @Override
