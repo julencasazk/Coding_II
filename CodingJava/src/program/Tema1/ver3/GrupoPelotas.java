@@ -1,4 +1,7 @@
-package program.Tema1;
+package program.Tema1.ver3;
+
+import program.Tema1.VentanaGrafica;
+import java.awt.Point;
 
 
 /**
@@ -109,6 +112,24 @@ public class GrupoPelotas {
 			if (i<numPelotas-1) ret += "|";
 		}
 		return ret + "]";
+	}
+
+
+	/**
+	 * Busca un punto en todas las pelotas para ver si esta dentro de alguna
+	 * @param p Punto de búsqueda
+	 * @return La pelota detro de la que está en este punto, o null si no está en ninguna
+	 */
+	public Pelota buscaPuntoEnPelotas( Point p ) {
+		//TODO
+		for (int i = 0; i < numPelotas; i++) {
+			Pelota pelota = pelotas[i];
+			if (pelota.contieneA(p)){
+				return pelota;
+			}
+		}
+		return null;
+
 	}
 	
 	/* Posible prueba de clase

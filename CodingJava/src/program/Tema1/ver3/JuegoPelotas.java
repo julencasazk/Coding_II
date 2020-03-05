@@ -1,10 +1,9 @@
-package program.Tema1.ver2;
+package program.Tema1.ver3;
 
-import program.Tema1.GrupoPelotas;
-import program.Tema1.Pelota;
 import program.Tema1.VentanaGrafica;
 
 import java.awt.Color;
+import java.awt.Point;
 import java.util.Random;
 
 /**
@@ -22,8 +21,36 @@ public class JuegoPelotas {
     private static final int RADIO_MAXIMO = 50;
     private static final int RADIO_MINIMO = 10;
     private static final Color[] COLORES_PELOTA = new Color[] {Color.RED, Color.GREEN, Color.BLUE};
+    
 
     public static void main(String[] args) {
+        
+    }
+
+    public static void juego() {
+        boolean juegoActivo = true;
+        while (!vent.estaCerrada() && juegoActivo) {
+            Point puls = vent.getRatonPulsado();
+            if (puls!=null) {
+                Pelota estaDentro = grupo.buscaPuntoEnPelotas( puls );
+                if (estaDentro!=null) {
+                    Point drag = vent.getRatonPulsado();
+                    while (drag!=null) { // Esperar a que acabe el drag
+                        // Ocurre mientras esta moviendo
+                        estaDentro.setX( drag.x);
+                        estaDentro.setY( drag.y);
+                        estaDentro.dibuja( vent );
+                        vent.espera(20);
+                        drag = vent.getRatonPulsado();
+                    }
+                    // Final del movimiento
+                }
+            }
+            vent.espera(20);
+        }
+    }
+
+    public static void init() {
         vent = new VentanaGrafica(ANCHO_CASILLAS * anchoCasilla, ALTO_CASILLAS * altoCasilla, "Juego");
         Random r = new Random();
         grupo = new GrupoPelotas(NUM_PELOTAS);

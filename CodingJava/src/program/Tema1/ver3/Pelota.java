@@ -1,5 +1,7 @@
-package program.Tema1;
+package program.Tema1.ver3;
 import java.awt.Color;
+import java.awt.Point;
+import program.Tema1.VentanaGrafica;
 
 
 /**
@@ -95,11 +97,11 @@ public class Pelota {
         this.rmPelota(v);
         for(int inc = 0; inc < 50; inc++ ){
             x++;            
-            this.dibujar(v);
+            this.dibuja(v);
             v.espera(40); // 2000 milisegundos / 50 movimientos            
             this.rmPelota(v);
         }
-        this.dibujar(v);
+        this.dibuja(v);
 
     }
     public void rmPelota(VentanaGrafica v) {
@@ -110,7 +112,18 @@ public class Pelota {
         this.rmPelota(v);
         x += incX; // x =  x + incX
         y += incY; // y = y + incY
-        this.dibujar(v);
+        this.dibuja(v);
+    }
+
+
+    public boolean contieneA( Point p ) {
+
+        return contieneA(p.x, p.y);
+    }
+
+    public boolean contieneA (int x, int y) {
+        double distancia = Math.sqrt( (x-this.x)*(x-this.x)*(y-this.y)*(y-this.y));
+        return distancia <= radio;
     }
 
     public boolean equals(Object obj) {
