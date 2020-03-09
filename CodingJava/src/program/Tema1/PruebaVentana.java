@@ -22,13 +22,13 @@ public class PruebaVentana {
         miPelota.setRadio(20);
         miPelota.setColor(miColor);
 
-        miPelota.dibujar(v);
-        miPelota2.dibujar(v);
+        miPelota.dibuja(v);
+        miPelota2.dibuja(v);
         
         GrupoPelotas grupo = new GrupoPelotas(0);
-        grupo.addPelota(miPelota);
-        grupo.addPelota(miPelota2);
-        grupo.dibujaPelota(v);
+        grupo.anyadePelota(miPelota);
+        grupo.anyadePelota(miPelota2);
+        grupo.dibuja(v);
          moverEnParalelo(v, miPelota, miPelota2);
         //moverConRaton(v, miPelota);
         // miPelota.move50Right(v); / No se va a ejecutar nunca, pues moverconraton no termina hasta cerrar la ventana

@@ -66,7 +66,6 @@ public class DeustoCrash {
                         tablero.getGrid()[i][j] = null;
                     }
                 }
-                
             }
         }
         return true;
@@ -91,6 +90,4 @@ public class DeustoCrash {
         }
 
     }
-
-
 }
